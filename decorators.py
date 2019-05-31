@@ -1,4 +1,5 @@
-# coding:utf-8
+# -*- coding: utf-8 -*-
+# -*- author: Floyda -*-
 
 from threading import Thread
 from functools import wraps

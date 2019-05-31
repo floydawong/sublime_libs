@@ -1,4 +1,5 @@
-# coding:utf-8
+# -*- coding: utf-8 -*-
+# -*- author: Floyda -*-
 
 import sublime
 from sublime_lib import SettingsDict, NamedSettingsDict

@@ -1,7 +1,10 @@
-# coding:utf-8
+# -*- coding: utf-8 -*-
+# -*- author: Floyda -*-
 
 import sublime
 import os
+
+__all__ = ['get_file_path_cache', 'get_setting_path_user']
 
 
 def get_file_path_cache(name):
