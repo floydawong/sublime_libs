@@ -6,10 +6,10 @@ from sublime_lib import SettingsDict, NamedSettingsDict
 
 import os
 import json
-from .resource import get_file_path_cache, get_setting_path_user
+from .resource import get_cache_file_path, get_user_setting_path
 
 
-class Storage():
+class Storage:
     def __init__(self, name):
         self._name = name
         self._dict = {}
@@ -49,7 +49,7 @@ class StorageSetting(Storage):
 class StorageCache(Storage):
     def __init__(self, name):
         super(StorageCache, self).__init__(name)
-        self._path = get_file_path_cache(self._name)
+        self._path = get_cache_file_path(self._name)
         self._dict = {}
         self._load()
 
@@ -64,8 +64,8 @@ class StorageCache(Storage):
 
     def save(self):
         try:
-            fp = open(self._path, 'w+')
-            print('save content:', json.dumps(self._dict))
+            fp = open(self._path, "w+")
+            print("save content:", json.dumps(self._dict))
             fp.write(json.dumps(self._dict))
             fp.close()
         except:
@@ -74,8 +74,8 @@ class StorageCache(Storage):
     def clear(self):
         self._dict = {}
         try:
-            fp = open(self._path, 'w+')
-            fp.write('{}')
+            fp = open(self._path, "w+")
+            fp.write("{}")
             fp.close()
         except:
             sublime.error_message("Cann't save to local.")

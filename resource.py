@@ -4,13 +4,16 @@
 import sublime
 import os
 
-__all__ = ['get_file_path_cache', 'get_setting_path_user']
+__all__ = ["get_cache_file_path", "get_user_setting_path", "get_user_project_path"]
 
 
-def get_file_path_cache(name):
-    return os.path.join(sublime.cache_path(), 'User', '%s.cache' % name)
+def get_cache_file_path(name):
+    return os.path.join(sublime.cache_path(), "User", "%s.cache" % name)
 
 
-def get_setting_path_user(name):
-    return os.path.join(sublime.packages_path(), 'User',
-                        '%s.sublime-settings' % name)
+def get_user_setting_path(name):
+    return os.path.join(sublime.packages_path(), "User", "%s.sublime-settings" % name)
+
+
+def get_user_project_path(name):
+    return os.path.join(sublime.packages_path(), "User", "%s.sublime-project" % name)
