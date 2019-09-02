@@ -4,7 +4,12 @@
 import sublime
 import os
 
-__all__ = ["get_cache_file_path", "get_user_setting_path", "get_user_project_path"]
+__all__ = [
+    "get_cache_file_path",
+    "get_user_setting_path",
+    "get_user_project_path",
+    "get_user_path",
+]
 
 
 def get_cache_file_path(name):

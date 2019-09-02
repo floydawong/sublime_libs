@@ -4,7 +4,7 @@
 import os
 import logging
 
-__all__ = ['init', 'clear', 'debug', 'info', 'warning', 'error', 'critical']
+__all__ = ["init", "clear", "debug", "info", "warning", "error", "critical"]
 
 PROJ_NAME = os.path.split(os.path.split(os.path.dirname(__file__))[0])[1]
 logger = logging.getLogger(PROJ_NAME)
@@ -38,36 +38,36 @@ def clear():
 
 
 def _m(prefix, msg):
-    '''Messages To String'''
-    return '{}: '.format(prefix) + ' '.join([str(x) for x in msg])
+    """Messages To String"""
+    return "{}: ".format(prefix) + " ".join([str(x) for x in msg])
 
 
 def debug(*msg):
-    logger.debug(_m('debug', msg))
+    logger.debug(_m("debug", msg))
 
 
 def info(*msg):
-    logger.info(_m('info', msg))
+    logger.info(_m("info", msg))
 
 
 def warning(*msg):
-    logger.warning(_m('warning', msg))
+    logger.warning(_m("warning", msg))
 
 
 def error(*msg):
-    logger.error(_m('error', msg))
+    logger.error(_m("error", msg))
 
 
 def critical(*msg):
-    logger.critical(_m('critical', msg))
+    logger.critical(_m("critical", msg))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # init()
     init(True)
-    debug('debug')
-    info('info')
-    warning('warning')
-    error('error')
-    critical('critical')
+    debug("debug")
+    info("info")
+    warning("warning")
+    error("error")
+    critical("critical")
     clear()
