@@ -26,11 +26,11 @@ def _remove_handler():
 
 
 def init(show_debug=False):
+    _add_handler()
     if show_debug:
         logger.setLevel(logging.DEBUG)
-        _add_handler()
         return
-    logger.setLevel(logging.CRITICAL + 1)
+    logger.setLevel(logging.INFO + 1)
 
 
 def clear():
@@ -64,7 +64,8 @@ def critical(*msg):
 
 if __name__ == "__main__":
     # init()
-    init(True)
+    # init(True)
+    init(False)
     debug("debug")
     info("info")
     warning("warning")
